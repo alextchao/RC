@@ -1,0 +1,680 @@
+@prefix : <http://www.semanticweb.org/alex/ontologies/2024/3/ASS#> .
+@prefix ASS: <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/alex/ontologies/2024/3/ASS> .
+
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS> rdf:type owl:Ontology ;
+                                                         rdfs:comment "An ontology modeling airlines satisfaction surveys" ;
+                                                         rdfs:label "Airlines satisfaction survey ontology" ;
+                                                         <http://xmlns.com/foaf/0.1/authors> """Alexander Torres Chao
+Crina Anelina Manole""" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled
+<http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> rdf:type owl:AnnotationProperty .
+
+
+###  http://xmlns.com/foaf/0.1/authors
+<http://xmlns.com/foaf/0.1/authors> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/alex/ontologies/2024/3/ASS#destination
+:destination rdf:type owl:ObjectProperty ;
+             rdfs:domain ASS:Passenger ;
+             rdfs:range ASS:Airport .
+
+
+###  http://www.semanticweb.org/alex/ontologies/2024/3/ASS#flightsLandedOn
+:flightsLandedOn rdf:type owl:ObjectProperty ;
+                 rdfs:domain ASS:Airport ;
+                 rdfs:range ASS:Flight .
+
+
+###  http://www.semanticweb.org/alex/ontologies/2024/3/ASS#hasLandedAt
+:hasLandedAt rdf:type owl:ObjectProperty ;
+             rdfs:domain ASS:Flight ;
+             rdfs:range ASS:Airport .
+
+
+###  http://www.semanticweb.org/alex/ontologies/2024/3/ASS/belongsTo
+ASS:belongsTo rdf:type owl:ObjectProperty ,
+                       owl:FunctionalProperty ;
+              rdfs:domain ASS:Survey ;
+              rdfs:range ASS:Passenger ;
+              rdfs:comment "A survey belongs to a passenger" ;
+              rdfs:label "belongsTo" .
+
+
+###  http://www.semanticweb.org/alex/ontologies/2024/3/ASS/destinationAirport
+ASS:destinationAirport rdf:type owl:ObjectProperty ,
+                                owl:FunctionalProperty ;
+                       rdfs:domain ASS:Flight ;
+                       rdfs:range ASS:Destination ;
+                       owl:propertyDisjointWith ASS:originAirport ;
+                       rdfs:comment "Airport a flight arrived at" ;
+                       rdfs:label "destinationAirport" .
+
+
+###  http://www.semanticweb.org/alex/ontologies/2024/3/ASS/flightSurvey
+ASS:flightSurvey rdf:type owl:ObjectProperty ,
+                          owl:AsymmetricProperty ;
+                 rdfs:domain ASS:Survey ;
+                 rdfs:range ASS:Flight ;
+                 rdfs:comment "A survey belongs to a flight" ;
+                 rdfs:label "flightSurvey" .
+
+
+###  http://www.semanticweb.org/alex/ontologies/2024/3/ASS/hasFlight
+ASS:hasFlight rdf:type owl:ObjectProperty ,
+                       owl:AsymmetricProperty ;
+              rdfs:domain ASS:Passenger ;
+              rdfs:range ASS:Flight ;
+              rdfs:comment "A passenger has a flight" ;
+              rdfs:label "hasFlight" .
+
+
+###  http://www.semanticweb.org/alex/ontologies/2024/3/ASS/hasPassengers
+ASS:hasPassengers rdf:type owl:ObjectProperty ;
+                  rdfs:domain ASS:Flight ;
+                  rdfs:range ASS:Passenger ;
+                  rdfs:comment "A flight have passengers" ;
+                  rdfs:label "hasPassengers" .
+
+
+###  http://www.semanticweb.org/alex/ontologies/2024/3/ASS/makeSurvey
+ASS:makeSurvey rdf:type owl:ObjectProperty ;
+               rdfs:domain ASS:Passenger ;
+               rdfs:range ASS:Survey ;
+               rdfs:comment "A passenger answers a survey" ;
+               rdfs:label "makeSurvey" .
+
+
+###  http://www.semanticweb.org/alex/ontologies/2024/3/ASS/originAirport
+ASS:originAirport rdf:type owl:ObjectProperty ,
+                           owl:FunctionalProperty ;
+                  rdfs:domain ASS:Flight ;
+                  rdfs:range ASS:Origin ;
+                  rdfs:comment "Airport a flight took of from" ;
+                  rdfs:label "originAirport" .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/alex/ontologies/2024/3/ASS/airportCode
+ASS:airportCode rdf:type owl:DatatypeProperty ;
+                rdfs:domain ASS:Airport ;
+                rdfs:comment "IATA code for an airport" ;
+                rdfs:label "airportCode" .
+
+
+###  http://www.semanticweb.org/alex/ontologies/2024/3/ASS/datePublished
+ASS:datePublished rdf:type owl:DatatypeProperty ;
+                  rdfs:domain ASS:Survey ;
+                  rdfs:range xsd:date ;
+                  rdfs:comment "The date a survey has been published" ;
+                  rdfs:label "datePublished"^^xsd:date .
+
+
+###  http://www.semanticweb.org/alex/ontologies/2024/3/ASS/flightNumber
+ASS:flightNumber rdf:type owl:DatatypeProperty ;
+                 rdfs:domain ASS:Flight ;
+                 rdfs:range xsd:string ;
+                 rdfs:comment "A flight has a number that identificates it" ;
+                 rdfs:label "flightNumber" .
+
+
+###  http://www.semanticweb.org/alex/ontologies/2024/3/ASS/name
+ASS:name rdf:type owl:DatatypeProperty ;
+         rdfs:domain ASS:Passenger ;
+         rdfs:comment "Passenger name" ;
+         rdfs:label "name" .
+
+
+###  http://www.semanticweb.org/alex/ontologies/2024/3/ASS/rating
+ASS:rating rdf:type owl:DatatypeProperty ;
+           rdfs:domain ASS:Survey ;
+           rdfs:range xsd:int ;
+           rdfs:comment "Global rating that a passenger gives on a survey" ;
+           rdfs:label "rating" .
+
+
+###  http://www.semanticweb.org/alex/ontologies/2024/3/ASS/reviewBody
+ASS:reviewBody rdf:type owl:DatatypeProperty ;
+               rdfs:domain ASS:Survey ;
+               rdfs:range xsd:string ;
+               rdfs:comment "The review body of a survey" ;
+               rdfs:label "reviewBody" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/alex/ontologies/2024/3/ASS#777
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS#777> rdf:type owl:Class ;
+                                                            rdfs:subClassOf ASS:Boeing ;
+                                                            rdfs:comment "Boeing 777 aircraft" ;
+                                                            rdfs:label 777 .
+
+
+###  http://www.semanticweb.org/alex/ontologies/2024/3/ASS#787
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS#787> rdf:type owl:Class ;
+                                                            rdfs:subClassOf ASS:Boeing ;
+                                                            rdfs:comment "Boeing 787 aircraft" ;
+                                                            rdfs:label 787 .
+
+
+###  http://www.semanticweb.org/alex/ontologies/2024/3/ASS/A350
+ASS:A350 rdf:type owl:Class ;
+         rdfs:subClassOf ASS:Airbus ;
+         rdfs:comment "Airbus A350 aircraft" ;
+         rdfs:label "A350" .
+
+
+###  http://www.semanticweb.org/alex/ontologies/2024/3/ASS/A380
+ASS:A380 rdf:type owl:Class ;
+         rdfs:subClassOf ASS:Airbus ;
+         rdfs:comment "Airbus A380 aircraft" ;
+         rdfs:label "A380" .
+
+
+###  http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Airbus
+ASS:Airbus rdf:type owl:Class ;
+           rdfs:subClassOf ASS:Aircraft ;
+           rdfs:comment "Airbus aircraft manufacturer" ;
+           rdfs:label "Airbus" .
+
+
+###  http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Aircraft
+ASS:Aircraft rdf:type owl:Class ;
+             rdfs:comment "Class that shows aircrafts manufacturers" ;
+             rdfs:label "Aircraft" ;
+             rdfs:seeAlso "https://dbpedia.org/ontology/Aircraft" .
+
+
+###  http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Airline
+ASS:Airline rdf:type owl:Class ;
+            rdfs:comment "Class that shows Airlines" ;
+            rdfs:label "Airline" ;
+            rdfs:seeAlso "https://dbpedia.org/ontology/Airline" .
+
+
+###  http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Airport
+ASS:Airport rdf:type owl:Class ;
+            rdfs:comment "Class that shows airports" ;
+            rdfs:label "Airport" ;
+            rdfs:seeAlso "https://dbpedia.org/ontology/Airport" .
+
+
+###  http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Boeing
+ASS:Boeing rdf:type owl:Class ;
+           rdfs:subClassOf ASS:Aircraft ;
+           rdfs:comment "Boeing aircraft manufacturer" ;
+           rdfs:label "Boeing" .
+
+
+###  http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Business
+ASS:Business rdf:type owl:Class ;
+             rdfs:subClassOf ASS:TripMotivation ;
+             rdfs:comment "Business trip" ;
+             rdfs:label "Business" .
+
+
+###  http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Business_Class
+ASS:Business_Class rdf:type owl:Class ;
+                   rdfs:subClassOf ASS:Class ;
+                   owl:disjointWith ASS:Economy_Class ,
+                                    ASS:First_Class ,
+                                    ASS:Premium_Economy ;
+                   rdfs:comment "Business Class seat type" ;
+                   rdfs:label "Business Class" .
+
+
+###  http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Class
+ASS:Class rdf:type owl:Class ;
+          rdfs:comment "Class that shows seat type passenger has flown" ;
+          rdfs:label "Class" .
+
+
+###  http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Couple
+ASS:Couple rdf:type owl:Class ;
+           rdfs:subClassOf ASS:Leisure ;
+           owl:disjointWith ASS:Family ,
+                            ASS:Solo ;
+           rdfs:comment "Passenger traveled with a couple" ;
+           rdfs:label "Couple" .
+
+
+###  http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Destination
+ASS:Destination rdf:type owl:Class ;
+                rdfs:subClassOf ASS:Airport ;
+                owl:disjointWith ASS:Origin ;
+                rdfs:comment "Flight destination airport" ;
+                rdfs:label "Destination" .
+
+
+###  http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Dissatisfied
+ASS:Dissatisfied rdf:type owl:Class ;
+                 rdfs:subClassOf ASS:Survey ;
+                 owl:disjointWith ASS:Satisfied ,
+                                  ASS:Very_Satisfied ;
+                 rdfs:comment "Passenger is dissatisfied" ;
+                 rdfs:label "Dissatisfied" .
+
+
+###  http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Economy_Class
+ASS:Economy_Class rdf:type owl:Class ;
+                  rdfs:subClassOf ASS:Class ;
+                  owl:disjointWith ASS:First_Class ,
+                                   ASS:Premium_Economy ;
+                  rdfs:comment "Economy Class seat type" ;
+                  rdfs:label "Economy Class" .
+
+
+###  http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Family
+ASS:Family rdf:type owl:Class ;
+           rdfs:subClassOf ASS:Leisure ;
+           owl:disjointWith ASS:Solo ;
+           rdfs:comment "Passenger traveled with family" ;
+           rdfs:label "Family" .
+
+
+###  http://www.semanticweb.org/alex/ontologies/2024/3/ASS/First_Class
+ASS:First_Class rdf:type owl:Class ;
+                rdfs:subClassOf ASS:Class ;
+                owl:disjointWith ASS:Premium_Economy ;
+                rdfs:comment "First Class seat type" ;
+                rdfs:label "First Class" .
+
+
+###  http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Flight
+ASS:Flight rdf:type owl:Class ;
+           rdfs:comment "Class that shows flights" ;
+           rdfs:label "Flight" .
+
+
+###  http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Leisure
+ASS:Leisure rdf:type owl:Class ;
+            rdfs:subClassOf ASS:TripMotivation ;
+            rdfs:comment "Leisure trip" ;
+            rdfs:label "Leisure" .
+
+
+###  http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Origin
+ASS:Origin rdf:type owl:Class ;
+           rdfs:subClassOf ASS:Airport ;
+           rdfs:comment "Flight origin airport" ;
+           rdfs:label "Origin" .
+
+
+###  http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Passenger
+ASS:Passenger rdf:type owl:Class ;
+              rdfs:comment "Class that represent passenger of the flight survey" ;
+              rdfs:label "Passenger" .
+
+
+###  http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Premium_Economy
+ASS:Premium_Economy rdf:type owl:Class ;
+                    rdfs:subClassOf ASS:Class ;
+                    rdfs:comment "Premium Economy seat type" ;
+                    rdfs:label "Premium Economy" .
+
+
+###  http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Qatar_Airways
+ASS:Qatar_Airways rdf:type owl:Class ;
+                  rdfs:subClassOf ASS:Airline ;
+                  owl:disjointWith ASS:Ryanair ;
+                  rdfs:comment "Qatar Airways airline" ;
+                  rdfs:label "Qatar_Airways" .
+
+
+###  http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Ryanair
+ASS:Ryanair rdf:type owl:Class ;
+            rdfs:subClassOf ASS:Airline ;
+            rdfs:comment "Ryanair airline" ;
+            rdfs:label "Ryanair" .
+
+
+###  http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Satisfied
+ASS:Satisfied rdf:type owl:Class ;
+              rdfs:subClassOf ASS:Survey ;
+              owl:disjointWith ASS:Very_Satisfied ;
+              rdfs:comment "Passenger is satisfied" ;
+              rdfs:label "Satisfied" .
+
+
+###  http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Solo
+ASS:Solo rdf:type owl:Class ;
+         rdfs:subClassOf ASS:Leisure ;
+         rdfs:comment "Passenger traveled solo" ;
+         rdfs:label "Solo" .
+
+
+###  http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Survey
+ASS:Survey rdf:type owl:Class ;
+           rdfs:comment "Class that shows level of satisfaction surveyed" ;
+           rdfs:label "Survey" .
+
+
+###  http://www.semanticweb.org/alex/ontologies/2024/3/ASS/TripMotivation
+ASS:TripMotivation rdf:type owl:Class ;
+                   rdfs:comment "Trip's motivation" ;
+                   rdfs:label "TripMotivation" .
+
+
+###  http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Very_Satisfied
+ASS:Very_Satisfied rdf:type owl:Class ;
+                   rdfs:subClassOf ASS:Survey ;
+                   rdfs:comment "Passenger is very satisfied" ;
+                   rdfs:label "Very Satisfied" .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/alex/ontologies/2024/3/ASS#SCQ
+:SCQ rdf:type owl:NamedIndividual ,
+              ASS:Airport ;
+     :flightsLandedOn ASS:FR666 ;
+     rdfs:comment "Airport of Santiago de Compostela" ;
+     rdfs:label "SCQ" .
+
+
+###  http://www.semanticweb.org/alex/ontologies/2024/3/ASS/FR666
+ASS:FR666 rdf:type owl:NamedIndividual ,
+                   <http://www.semanticweb.org/alex/ontologies/2024/3/ASS#777> ,
+                   ASS:Flight ,
+                   ASS:Ryanair ;
+          ASS:hasPassengers ASS:passenger1 ;
+          ASS:flightNumber "FR666" ;
+          rdfs:comment "Flight number FR666" ;
+          rdfs:label "FR666" .
+
+
+###  http://www.semanticweb.org/alex/ontologies/2024/3/ASS/FR845
+ASS:FR845 rdf:type owl:NamedIndividual ,
+                   <http://www.semanticweb.org/alex/ontologies/2024/3/ASS#787> ,
+                   ASS:Flight ,
+                   ASS:Ryanair ;
+          ASS:hasPassengers ASS:passenger2 ;
+          ASS:flightNumber "FR845" ;
+          rdfs:comment "Flight number FR845" ;
+          rdfs:label "FR845" .
+
+
+###  http://www.semanticweb.org/alex/ontologies/2024/3/ASS/FR847
+ASS:FR847 rdf:type owl:NamedIndividual ,
+                   <http://www.semanticweb.org/alex/ontologies/2024/3/ASS#777> ,
+                   ASS:Flight ,
+                   ASS:Ryanair ;
+          ASS:flightNumber "FR847" ;
+          rdfs:comment "Flight number FR847" ;
+          rdfs:label "FR847" .
+
+
+###  http://www.semanticweb.org/alex/ontologies/2024/3/ASS/QR1234
+ASS:QR1234 rdf:type owl:NamedIndividual ,
+                    ASS:A350 ,
+                    ASS:Flight ,
+                    ASS:Qatar_Airways ;
+           ASS:hasPassengers ASS:passenger5 ;
+           ASS:flightNumber "QR1234" ;
+           rdfs:comment "Flight number QR1234" ;
+           rdfs:label "QR1234" .
+
+
+###  http://www.semanticweb.org/alex/ontologies/2024/3/ASS/QR3455
+ASS:QR3455 rdf:type owl:NamedIndividual ,
+                    ASS:A380 ,
+                    ASS:Flight ,
+                    ASS:Qatar_Airways ;
+           ASS:hasPassengers ASS:passenger4 ;
+           ASS:flightNumber "QR3455" ;
+           rdfs:comment "Flight number QR3455" ;
+           rdfs:label "QR3455" .
+
+
+###  http://www.semanticweb.org/alex/ontologies/2024/3/ASS/passenger1
+ASS:passenger1 rdf:type owl:NamedIndividual ,
+                        ASS:Passenger ;
+               ASS:hasFlight ASS:FR666 ;
+               ASS:makeSurvey ASS:survey1 ;
+               ASS:name "Paco" .
+
+
+###  http://www.semanticweb.org/alex/ontologies/2024/3/ASS/passenger2
+ASS:passenger2 rdf:type owl:NamedIndividual ,
+                        ASS:Passenger ;
+               ASS:hasFlight ASS:FR845 ;
+               ASS:makeSurvey ASS:survey2 ;
+               ASS:name "Pedro" .
+
+
+###  http://www.semanticweb.org/alex/ontologies/2024/3/ASS/passenger3
+ASS:passenger3 rdf:type owl:NamedIndividual ,
+                        ASS:Passenger ;
+               ASS:hasFlight ASS:FR666 ;
+               ASS:makeSurvey ASS:survey3 ;
+               ASS:name "Alba" .
+
+
+###  http://www.semanticweb.org/alex/ontologies/2024/3/ASS/passenger4
+ASS:passenger4 rdf:type owl:NamedIndividual ,
+                        ASS:Passenger ;
+               ASS:hasFlight ASS:QR3455 ;
+               ASS:makeSurvey ASS:survey4 ;
+               ASS:name "María" .
+
+
+###  http://www.semanticweb.org/alex/ontologies/2024/3/ASS/passenger5
+ASS:passenger5 rdf:type owl:NamedIndividual ,
+                        ASS:Passenger ;
+               ASS:hasFlight ASS:QR1234 ;
+               ASS:name "Fina" .
+
+
+###  http://www.semanticweb.org/alex/ontologies/2024/3/ASS/survey1
+ASS:survey1 rdf:type owl:NamedIndividual ,
+                     ASS:Ryanair ,
+                     ASS:Survey ;
+            ASS:belongsTo ASS:passenger1 ;
+            ASS:flightSurvey ASS:FR666 ;
+            ASS:rating 9 ;
+            ASS:reviewBody "Good and safe travel" ;
+            rdfs:comment "Survey 1 taken" ;
+            rdfs:label "survey1" .
+
+
+###  http://www.semanticweb.org/alex/ontologies/2024/3/ASS/survey2
+ASS:survey2 rdf:type owl:NamedIndividual ,
+                     ASS:Survey ;
+            ASS:belongsTo ASS:passenger2 ;
+            ASS:flightSurvey ASS:FR845 ;
+            ASS:rating "4"^^xsd:int ;
+            ASS:reviewBody "Terrible experience flying" ;
+            rdfs:comment "Survey 2 taken" ;
+            rdfs:label "survey2" .
+
+
+###  http://www.semanticweb.org/alex/ontologies/2024/3/ASS/survey3
+ASS:survey3 rdf:type owl:NamedIndividual ,
+                     ASS:Survey ;
+            ASS:belongsTo ASS:passenger3 ;
+            ASS:flightSurvey ASS:FR845 ;
+            ASS:rating 6 ;
+            ASS:reviewBody "Flew back from Faro to London Luton Friday 2nd February. Ryanair in both directions was bang on time and smooth flights in both directions.  We always sit in Front for more space and this was very comfortable for just under a 3 hour flight. The cabin crew were polite and efficient with nice sense of humour especially and engagement especially Ethan and his female colleague at the front section. For their human touch [unlike sometimes the stand offish BA crews] merit a 10/10 marking" ;
+            rdfs:comment "Survey 3 taken" ;
+            rdfs:label "survey3" .
+
+
+###  http://www.semanticweb.org/alex/ontologies/2024/3/ASS/survey4
+ASS:survey4 rdf:type owl:NamedIndividual ,
+                     ASS:Survey ;
+            ASS:belongsTo ASS:passenger4 ;
+            ASS:flightSurvey ASS:QR3455 ;
+            ASS:rating 10 ;
+            ASS:reviewBody "Another good affordable flight with Ryanair. On time, pleasant staff at check-in and on board. We use Ryanair as our first choice on every flight we take." ;
+            rdfs:comment "Survey 4 taken" ;
+            rdfs:label "survey4" .
+
+
+#################################################################
+#    Rules
+#################################################################
+
+<http://www.semanticweb.org/alex/ontologies/2024/3/s> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<http://www.semanticweb.org/alex/ontologies/2024/3/r> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "A survey got a very satisfied rating" ;
+   rdfs:label "VerySatisfied" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> ASS:Survey ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/alex/ontologies/2024/3/s>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> ASS:rating ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/alex/ontologies/2024/3/s> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/alex/ontologies/2024/3/r>
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#greaterThan> ;
+                                                                             <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                                          rdf:first <http://www.semanticweb.org/alex/ontologies/2024/3/r> ;
+                                                                                                                          rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                     rdf:first 8 ;
+                                                                                                                                     rdf:rest rdf:nil
+                                                                                                                                   ]
+                                                                                                                        ]
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> ASS:Very_Satisfied ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/alex/ontologies/2024/3/s>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "A survey got a satisfied rating" ;
+   rdfs:label "Satisfied" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> ASS:Survey ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/alex/ontologies/2024/3/s>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> ASS:rating ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/alex/ontologies/2024/3/s> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/alex/ontologies/2024/3/r>
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#greaterThanOrEqual> ;
+                                                                             <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                                          rdf:first <http://www.semanticweb.org/alex/ontologies/2024/3/r> ;
+                                                                                                                          rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                     rdf:first 5 ;
+                                                                                                                                     rdf:rest rdf:nil
+                                                                                                                                   ]
+                                                                                                                        ]
+                                                                           ] ;
+                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#lessThanOrEqual> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                                                     rdf:first <http://www.semanticweb.org/alex/ontologies/2024/3/r> ;
+                                                                                                                                     rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                                rdf:first 8 ;
+                                                                                                                                                rdf:rest rdf:nil
+                                                                                                                                              ]
+                                                                                                                                   ]
+                                                                                      ] ;
+                                                                            rdf:rest rdf:nil
+                                                                          ]
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> ASS:Satisfied ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/alex/ontologies/2024/3/s>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "A survey got a dissatisfied rating" ;
+   rdfs:label "Dissatisfied" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> ASS:Survey ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/alex/ontologies/2024/3/s>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> ASS:rating ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/alex/ontologies/2024/3/s> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/alex/ontologies/2024/3/r>
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#lessThan> ;
+                                                                             <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                                          rdf:first <http://www.semanticweb.org/alex/ontologies/2024/3/r> ;
+                                                                                                                          rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                     rdf:first 5 ;
+                                                                                                                                     rdf:rest rdf:nil
+                                                                                                                                   ]
+                                                                                                                        ]
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> ASS:Dissatisfied ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/alex/ontologies/2024/3/s>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
