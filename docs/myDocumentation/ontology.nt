@@ -1,0 +1,636 @@
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS> <http://www.w3.org/2000/01/rdf-schema#comment> "An ontology modeling airlines satisfaction surveys" .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS> <http://www.w3.org/2000/01/rdf-schema#label> "Airlines satisfaction survey ontology" .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS> <http://xmlns.com/foaf/0.1/authors> "Alexander Torres Chao\nCrina Anelina Manole" .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled
+<http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://xmlns.com/foaf/0.1/authors
+<http://xmlns.com/foaf/0.1/authors> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Datatypes
+# #
+# #################################################################
+# 
+# 
+# http://www.w3.org/2001/XMLSchema#date
+<http://www.w3.org/2001/XMLSchema#date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://www.semanticweb.org/alex/ontologies/2024/3/ASS#destination
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS#destination> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS#destination> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Passenger> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS#destination> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Airport> .
+# 
+# http://www.semanticweb.org/alex/ontologies/2024/3/ASS#flightsLandedOn
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS#flightsLandedOn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS#flightsLandedOn> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Airport> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS#flightsLandedOn> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Flight> .
+# 
+# http://www.semanticweb.org/alex/ontologies/2024/3/ASS#hasLandedAt
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS#hasLandedAt> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS#hasLandedAt> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Flight> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS#hasLandedAt> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Airport> .
+# 
+# http://www.semanticweb.org/alex/ontologies/2024/3/ASS/belongsTo
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/belongsTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/belongsTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/belongsTo> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Survey> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/belongsTo> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Passenger> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/belongsTo> <http://www.w3.org/2000/01/rdf-schema#comment> "A survey belongs to a passenger" .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/belongsTo> <http://www.w3.org/2000/01/rdf-schema#label> "belongsTo" .
+# 
+# http://www.semanticweb.org/alex/ontologies/2024/3/ASS/destinationAirport
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/destinationAirport> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/destinationAirport> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/destinationAirport> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Flight> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/destinationAirport> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Destination> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/destinationAirport> <http://www.w3.org/2002/07/owl#propertyDisjointWith> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/originAirport> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/destinationAirport> <http://www.w3.org/2000/01/rdf-schema#comment> "Airport a flight arrived at" .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/destinationAirport> <http://www.w3.org/2000/01/rdf-schema#label> "destinationAirport" .
+# 
+# http://www.semanticweb.org/alex/ontologies/2024/3/ASS/flightSurvey
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/flightSurvey> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/flightSurvey> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AsymmetricProperty> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/flightSurvey> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Survey> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/flightSurvey> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Flight> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/flightSurvey> <http://www.w3.org/2000/01/rdf-schema#comment> "A survey belongs to a flight" .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/flightSurvey> <http://www.w3.org/2000/01/rdf-schema#label> "flightSurvey" .
+# 
+# http://www.semanticweb.org/alex/ontologies/2024/3/ASS/hasFlight
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/hasFlight> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/hasFlight> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AsymmetricProperty> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/hasFlight> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Passenger> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/hasFlight> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Flight> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/hasFlight> <http://www.w3.org/2000/01/rdf-schema#comment> "A passenger has a flight" .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/hasFlight> <http://www.w3.org/2000/01/rdf-schema#label> "hasFlight" .
+# 
+# http://www.semanticweb.org/alex/ontologies/2024/3/ASS/hasPassengers
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/hasPassengers> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/hasPassengers> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Flight> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/hasPassengers> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Passenger> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/hasPassengers> <http://www.w3.org/2000/01/rdf-schema#comment> "A flight have passengers" .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/hasPassengers> <http://www.w3.org/2000/01/rdf-schema#label> "hasPassengers" .
+# 
+# http://www.semanticweb.org/alex/ontologies/2024/3/ASS/makeSurvey
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/makeSurvey> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/makeSurvey> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Passenger> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/makeSurvey> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Survey> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/makeSurvey> <http://www.w3.org/2000/01/rdf-schema#comment> "A passenger answers a survey" .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/makeSurvey> <http://www.w3.org/2000/01/rdf-schema#label> "makeSurvey" .
+# 
+# http://www.semanticweb.org/alex/ontologies/2024/3/ASS/originAirport
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/originAirport> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/originAirport> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/originAirport> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Flight> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/originAirport> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Origin> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/originAirport> <http://www.w3.org/2000/01/rdf-schema#comment> "Airport a flight took of from" .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/originAirport> <http://www.w3.org/2000/01/rdf-schema#label> "originAirport" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# http://www.semanticweb.org/alex/ontologies/2024/3/ASS/airportCode
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/airportCode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/airportCode> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Airport> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/airportCode> <http://www.w3.org/2000/01/rdf-schema#comment> "IATA code for an airport" .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/airportCode> <http://www.w3.org/2000/01/rdf-schema#label> "airportCode" .
+# 
+# http://www.semanticweb.org/alex/ontologies/2024/3/ASS/datePublished
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/datePublished> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/datePublished> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Survey> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/datePublished> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#date> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/datePublished> <http://www.w3.org/2000/01/rdf-schema#comment> "The date a survey has been published" .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/datePublished> <http://www.w3.org/2000/01/rdf-schema#label> "datePublished"^^<http://www.w3.org/2001/XMLSchema#date> .
+# 
+# http://www.semanticweb.org/alex/ontologies/2024/3/ASS/flightNumber
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/flightNumber> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/flightNumber> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Flight> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/flightNumber> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/flightNumber> <http://www.w3.org/2000/01/rdf-schema#comment> "A flight has a number that identificates it" .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/flightNumber> <http://www.w3.org/2000/01/rdf-schema#label> "flightNumber" .
+# 
+# http://www.semanticweb.org/alex/ontologies/2024/3/ASS/name
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/name> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/name> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Passenger> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/name> <http://www.w3.org/2000/01/rdf-schema#comment> "Passenger name" .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/name> <http://www.w3.org/2000/01/rdf-schema#label> "name" .
+# 
+# http://www.semanticweb.org/alex/ontologies/2024/3/ASS/rating
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/rating> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/rating> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Survey> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/rating> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#int> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/rating> <http://www.w3.org/2000/01/rdf-schema#comment> "Global rating that a passenger gives on a survey" .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/rating> <http://www.w3.org/2000/01/rdf-schema#label> "rating" .
+# 
+# http://www.semanticweb.org/alex/ontologies/2024/3/ASS/reviewBody
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/reviewBody> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/reviewBody> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Survey> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/reviewBody> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/reviewBody> <http://www.w3.org/2000/01/rdf-schema#comment> "The review body of a survey" .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/reviewBody> <http://www.w3.org/2000/01/rdf-schema#label> "reviewBody" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://www.semanticweb.org/alex/ontologies/2024/3/ASS#777
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS#777> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS#777> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Boeing> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS#777> <http://www.w3.org/2000/01/rdf-schema#comment> "Boeing 777 aircraft" .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS#777> <http://www.w3.org/2000/01/rdf-schema#label> "777"^^<http://www.w3.org/2001/XMLSchema#integer> .
+# 
+# http://www.semanticweb.org/alex/ontologies/2024/3/ASS#787
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS#787> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS#787> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Boeing> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS#787> <http://www.w3.org/2000/01/rdf-schema#comment> "Boeing 787 aircraft" .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS#787> <http://www.w3.org/2000/01/rdf-schema#label> "787"^^<http://www.w3.org/2001/XMLSchema#integer> .
+# 
+# http://www.semanticweb.org/alex/ontologies/2024/3/ASS/A350
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/A350> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/A350> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Airbus> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/A350> <http://www.w3.org/2000/01/rdf-schema#comment> "Airbus A350 aircraft" .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/A350> <http://www.w3.org/2000/01/rdf-schema#label> "A350" .
+# 
+# http://www.semanticweb.org/alex/ontologies/2024/3/ASS/A380
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/A380> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/A380> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Airbus> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/A380> <http://www.w3.org/2000/01/rdf-schema#comment> "Airbus A380 aircraft" .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/A380> <http://www.w3.org/2000/01/rdf-schema#label> "A380" .
+# 
+# http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Airbus
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Airbus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Airbus> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Aircraft> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Airbus> <http://www.w3.org/2000/01/rdf-schema#comment> "Airbus aircraft manufacturer" .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Airbus> <http://www.w3.org/2000/01/rdf-schema#label> "Airbus" .
+# 
+# http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Aircraft
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Aircraft> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Aircraft> <http://www.w3.org/2000/01/rdf-schema#comment> "Class that shows aircrafts manufacturers" .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Aircraft> <http://www.w3.org/2000/01/rdf-schema#label> "Aircraft" .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Aircraft> <http://www.w3.org/2000/01/rdf-schema#seeAlso> "https://dbpedia.org/ontology/Aircraft" .
+# 
+# http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Airline
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Airline> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Airline> <http://www.w3.org/2000/01/rdf-schema#comment> "Class that shows Airlines" .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Airline> <http://www.w3.org/2000/01/rdf-schema#label> "Airline" .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Airline> <http://www.w3.org/2000/01/rdf-schema#seeAlso> "https://dbpedia.org/ontology/Airline" .
+# 
+# http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Airport
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Airport> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Airport> <http://www.w3.org/2000/01/rdf-schema#comment> "Class that shows airports" .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Airport> <http://www.w3.org/2000/01/rdf-schema#label> "Airport" .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Airport> <http://www.w3.org/2000/01/rdf-schema#seeAlso> "https://dbpedia.org/ontology/Airport" .
+# 
+# http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Boeing
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Boeing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Boeing> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Aircraft> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Boeing> <http://www.w3.org/2000/01/rdf-schema#comment> "Boeing aircraft manufacturer" .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Boeing> <http://www.w3.org/2000/01/rdf-schema#label> "Boeing" .
+# 
+# http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Business
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Business> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Business> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/TripMotivation> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Business> <http://www.w3.org/2000/01/rdf-schema#comment> "Business trip" .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Business> <http://www.w3.org/2000/01/rdf-schema#label> "Business" .
+# 
+# http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Business_Class
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Business_Class> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Business_Class> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Class> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Business_Class> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Economy_Class> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Business_Class> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/First_Class> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Business_Class> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Premium_Economy> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Business_Class> <http://www.w3.org/2000/01/rdf-schema#comment> "Business Class seat type" .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Business_Class> <http://www.w3.org/2000/01/rdf-schema#label> "Business Class" .
+# 
+# http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Class
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Class> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Class> <http://www.w3.org/2000/01/rdf-schema#comment> "Class that shows seat type passenger has flown" .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Class> <http://www.w3.org/2000/01/rdf-schema#label> "Class" .
+# 
+# http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Couple
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Couple> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Couple> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Leisure> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Couple> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Family> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Couple> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Solo> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Couple> <http://www.w3.org/2000/01/rdf-schema#comment> "Passenger traveled with a couple" .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Couple> <http://www.w3.org/2000/01/rdf-schema#label> "Couple" .
+# 
+# http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Destination
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Destination> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Destination> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Airport> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Destination> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Origin> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Destination> <http://www.w3.org/2000/01/rdf-schema#comment> "Flight destination airport" .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Destination> <http://www.w3.org/2000/01/rdf-schema#label> "Destination" .
+# 
+# http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Dissatisfied
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Dissatisfied> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Dissatisfied> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Survey> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Dissatisfied> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Satisfied> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Dissatisfied> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Very_Satisfied> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Dissatisfied> <http://www.w3.org/2000/01/rdf-schema#comment> "Passenger is dissatisfied" .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Dissatisfied> <http://www.w3.org/2000/01/rdf-schema#label> "Dissatisfied" .
+# 
+# http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Economy_Class
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Economy_Class> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Economy_Class> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Class> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Economy_Class> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/First_Class> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Economy_Class> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Premium_Economy> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Economy_Class> <http://www.w3.org/2000/01/rdf-schema#comment> "Economy Class seat type" .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Economy_Class> <http://www.w3.org/2000/01/rdf-schema#label> "Economy Class" .
+# 
+# http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Family
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Family> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Family> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Leisure> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Family> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Solo> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Family> <http://www.w3.org/2000/01/rdf-schema#comment> "Passenger traveled with family" .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Family> <http://www.w3.org/2000/01/rdf-schema#label> "Family" .
+# 
+# http://www.semanticweb.org/alex/ontologies/2024/3/ASS/First_Class
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/First_Class> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/First_Class> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Class> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/First_Class> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Premium_Economy> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/First_Class> <http://www.w3.org/2000/01/rdf-schema#comment> "First Class seat type" .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/First_Class> <http://www.w3.org/2000/01/rdf-schema#label> "First Class" .
+# 
+# http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Flight
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Flight> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Flight> <http://www.w3.org/2000/01/rdf-schema#comment> "Class that shows flights" .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Flight> <http://www.w3.org/2000/01/rdf-schema#label> "Flight" .
+# 
+# http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Leisure
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Leisure> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Leisure> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/TripMotivation> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Leisure> <http://www.w3.org/2000/01/rdf-schema#comment> "Leisure trip" .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Leisure> <http://www.w3.org/2000/01/rdf-schema#label> "Leisure" .
+# 
+# http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Origin
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Origin> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Origin> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Airport> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Origin> <http://www.w3.org/2000/01/rdf-schema#comment> "Flight origin airport" .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Origin> <http://www.w3.org/2000/01/rdf-schema#label> "Origin" .
+# 
+# http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Passenger
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Passenger> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Passenger> <http://www.w3.org/2000/01/rdf-schema#comment> "Class that represent passenger of the flight survey" .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Passenger> <http://www.w3.org/2000/01/rdf-schema#label> "Passenger" .
+# 
+# http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Premium_Economy
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Premium_Economy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Premium_Economy> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Class> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Premium_Economy> <http://www.w3.org/2000/01/rdf-schema#comment> "Premium Economy seat type" .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Premium_Economy> <http://www.w3.org/2000/01/rdf-schema#label> "Premium Economy" .
+# 
+# http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Qatar_Airways
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Qatar_Airways> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Qatar_Airways> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Airline> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Qatar_Airways> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Ryanair> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Qatar_Airways> <http://www.w3.org/2000/01/rdf-schema#comment> "Qatar Airways airline" .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Qatar_Airways> <http://www.w3.org/2000/01/rdf-schema#label> "Qatar_Airways" .
+# 
+# http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Ryanair
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Ryanair> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Ryanair> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Airline> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Ryanair> <http://www.w3.org/2000/01/rdf-schema#comment> "Ryanair airline" .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Ryanair> <http://www.w3.org/2000/01/rdf-schema#label> "Ryanair" .
+# 
+# http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Satisfied
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Satisfied> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Satisfied> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Survey> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Satisfied> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Very_Satisfied> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Satisfied> <http://www.w3.org/2000/01/rdf-schema#comment> "Passenger is satisfied" .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Satisfied> <http://www.w3.org/2000/01/rdf-schema#label> "Satisfied" .
+# 
+# http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Solo
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Solo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Solo> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Leisure> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Solo> <http://www.w3.org/2000/01/rdf-schema#comment> "Passenger traveled solo" .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Solo> <http://www.w3.org/2000/01/rdf-schema#label> "Solo" .
+# 
+# http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Survey
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Survey> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Survey> <http://www.w3.org/2000/01/rdf-schema#comment> "Class that shows level of satisfaction surveyed" .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Survey> <http://www.w3.org/2000/01/rdf-schema#label> "Survey" .
+# 
+# http://www.semanticweb.org/alex/ontologies/2024/3/ASS/TripMotivation
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/TripMotivation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/TripMotivation> <http://www.w3.org/2000/01/rdf-schema#comment> "Trip's motivation" .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/TripMotivation> <http://www.w3.org/2000/01/rdf-schema#label> "TripMotivation" .
+# 
+# http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Very_Satisfied
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Very_Satisfied> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Very_Satisfied> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Survey> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Very_Satisfied> <http://www.w3.org/2000/01/rdf-schema#comment> "Passenger is very satisfied" .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Very_Satisfied> <http://www.w3.org/2000/01/rdf-schema#label> "Very Satisfied" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# http://www.semanticweb.org/alex/ontologies/2024/3/ASS#SCQ
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS#SCQ> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS#SCQ> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Airport> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS#SCQ> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS#flightsLandedOn> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/FR666> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS#SCQ> <http://www.w3.org/2000/01/rdf-schema#comment> "Airport of Santiago de Compostela" .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS#SCQ> <http://www.w3.org/2000/01/rdf-schema#label> "SCQ" .
+# 
+# http://www.semanticweb.org/alex/ontologies/2024/3/ASS/FR666
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/FR666> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/FR666> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS#777> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/FR666> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Flight> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/FR666> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Ryanair> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/FR666> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/hasPassengers> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/passenger1> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/FR666> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/flightNumber> "FR666" .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/FR666> <http://www.w3.org/2000/01/rdf-schema#comment> "Flight number FR666" .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/FR666> <http://www.w3.org/2000/01/rdf-schema#label> "FR666" .
+# 
+# http://www.semanticweb.org/alex/ontologies/2024/3/ASS/FR845
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/FR845> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/FR845> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS#787> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/FR845> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Flight> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/FR845> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Ryanair> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/FR845> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/hasPassengers> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/passenger2> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/FR845> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/flightNumber> "FR845" .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/FR845> <http://www.w3.org/2000/01/rdf-schema#comment> "Flight number FR845" .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/FR845> <http://www.w3.org/2000/01/rdf-schema#label> "FR845" .
+# 
+# http://www.semanticweb.org/alex/ontologies/2024/3/ASS/FR847
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/FR847> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/FR847> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS#777> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/FR847> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Flight> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/FR847> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Ryanair> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/FR847> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/flightNumber> "FR847" .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/FR847> <http://www.w3.org/2000/01/rdf-schema#comment> "Flight number FR847" .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/FR847> <http://www.w3.org/2000/01/rdf-schema#label> "FR847" .
+# 
+# http://www.semanticweb.org/alex/ontologies/2024/3/ASS/QR1234
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/QR1234> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/QR1234> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/A350> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/QR1234> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Flight> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/QR1234> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Qatar_Airways> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/QR1234> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/hasPassengers> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/passenger5> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/QR1234> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/flightNumber> "QR1234" .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/QR1234> <http://www.w3.org/2000/01/rdf-schema#comment> "Flight number QR1234" .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/QR1234> <http://www.w3.org/2000/01/rdf-schema#label> "QR1234" .
+# 
+# http://www.semanticweb.org/alex/ontologies/2024/3/ASS/QR3455
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/QR3455> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/QR3455> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/A380> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/QR3455> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Flight> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/QR3455> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Qatar_Airways> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/QR3455> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/hasPassengers> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/passenger4> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/QR3455> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/flightNumber> "QR3455" .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/QR3455> <http://www.w3.org/2000/01/rdf-schema#comment> "Flight number QR3455" .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/QR3455> <http://www.w3.org/2000/01/rdf-schema#label> "QR3455" .
+# 
+# http://www.semanticweb.org/alex/ontologies/2024/3/ASS/passenger1
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/passenger1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/passenger1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Passenger> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/passenger1> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/hasFlight> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/FR666> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/passenger1> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/makeSurvey> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/survey1> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/passenger1> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/name> "Paco" .
+# 
+# http://www.semanticweb.org/alex/ontologies/2024/3/ASS/passenger2
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/passenger2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/passenger2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Passenger> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/passenger2> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/hasFlight> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/FR845> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/passenger2> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/makeSurvey> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/survey2> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/passenger2> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/name> "Pedro" .
+# 
+# http://www.semanticweb.org/alex/ontologies/2024/3/ASS/passenger3
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/passenger3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/passenger3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Passenger> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/passenger3> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/hasFlight> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/FR666> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/passenger3> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/makeSurvey> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/survey3> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/passenger3> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/name> "Alba" .
+# 
+# http://www.semanticweb.org/alex/ontologies/2024/3/ASS/passenger4
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/passenger4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/passenger4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Passenger> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/passenger4> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/hasFlight> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/QR3455> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/passenger4> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/makeSurvey> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/survey4> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/passenger4> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/name> "María" .
+# 
+# http://www.semanticweb.org/alex/ontologies/2024/3/ASS/passenger5
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/passenger5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/passenger5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Passenger> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/passenger5> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/hasFlight> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/QR1234> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/passenger5> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/name> "Fina" .
+# 
+# http://www.semanticweb.org/alex/ontologies/2024/3/ASS/survey1
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/survey1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/survey1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Ryanair> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/survey1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Survey> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/survey1> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/belongsTo> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/passenger1> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/survey1> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/flightSurvey> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/FR666> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/survey1> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/rating> "9"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/survey1> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/reviewBody> "Good and safe travel" .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/survey1> <http://www.w3.org/2000/01/rdf-schema#comment> "Survey 1 taken" .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/survey1> <http://www.w3.org/2000/01/rdf-schema#label> "survey1" .
+# 
+# http://www.semanticweb.org/alex/ontologies/2024/3/ASS/survey2
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/survey2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/survey2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Survey> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/survey2> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/belongsTo> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/passenger2> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/survey2> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/flightSurvey> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/FR845> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/survey2> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/rating> "4"^^<http://www.w3.org/2001/XMLSchema#int> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/survey2> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/reviewBody> "Terrible experience flying" .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/survey2> <http://www.w3.org/2000/01/rdf-schema#comment> "Survey 2 taken" .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/survey2> <http://www.w3.org/2000/01/rdf-schema#label> "survey2" .
+# 
+# http://www.semanticweb.org/alex/ontologies/2024/3/ASS/survey3
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/survey3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/survey3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Survey> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/survey3> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/belongsTo> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/passenger3> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/survey3> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/flightSurvey> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/FR845> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/survey3> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/rating> "6"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/survey3> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/reviewBody> "Flew back from Faro to London Luton Friday 2nd February. Ryanair in both directions was bang on time and smooth flights in both directions.  We always sit in Front for more space and this was very comfortable for just under a 3 hour flight. The cabin crew were polite and efficient with nice sense of humour especially and engagement especially Ethan and his female colleague at the front section. For their human touch [unlike sometimes the stand offish BA crews] merit a 10/10 marking" .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/survey3> <http://www.w3.org/2000/01/rdf-schema#comment> "Survey 3 taken" .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/survey3> <http://www.w3.org/2000/01/rdf-schema#label> "survey3" .
+# 
+# http://www.semanticweb.org/alex/ontologies/2024/3/ASS/survey4
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/survey4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/survey4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Survey> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/survey4> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/belongsTo> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/passenger4> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/survey4> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/flightSurvey> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/QR3455> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/survey4> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/rating> "10"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/survey4> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/reviewBody> "Another good affordable flight with Ryanair. On time, pleasant staff at check-in and on board. We use Ryanair as our first choice on every flight we take." .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/survey4> <http://www.w3.org/2000/01/rdf-schema#comment> "Survey 4 taken" .
+<http://www.semanticweb.org/alex/ontologies/2024/3/ASS/survey4> <http://www.w3.org/2000/01/rdf-schema#label> "survey4" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Rules
+# #
+# #################################################################
+# 
+# 
+<http://www.semanticweb.org/alex/ontologies/2024/3/s> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#Variable> .
+<http://www.semanticweb.org/alex/ontologies/2024/3/r> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#Variable> .
+_:genid1 <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+_:genid1 <http://www.w3.org/2000/01/rdf-schema#comment> "A survey got a satisfied rating" .
+_:genid1 <http://www.w3.org/2000/01/rdf-schema#label> "Satisfied" .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#Imp> .
+_:genid1 <http://www.w3.org/2003/11/swrl#body> _:genid12 .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid10 .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid6 .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid2 .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid3 .
+_:genid3 <http://www.w3.org/2003/11/swrl#arguments> _:genid5 .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid4 .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "8"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.semanticweb.org/alex/ontologies/2024/3/r> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid3 <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#lessThanOrEqual> .
+<http://www.w3.org/2003/11/swrlb#lessThanOrEqual> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#Builtin> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#BuiltinAtom> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid7 .
+_:genid7 <http://www.w3.org/2003/11/swrl#arguments> _:genid9 .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid8 .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "5"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.semanticweb.org/alex/ontologies/2024/3/r> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid7 <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#greaterThanOrEqual> .
+<http://www.w3.org/2003/11/swrlb#greaterThanOrEqual> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#Builtin> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#BuiltinAtom> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid11 .
+_:genid11 <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/alex/ontologies/2024/3/r> .
+_:genid11 <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/alex/ontologies/2024/3/s> .
+_:genid11 <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/rating> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid13 .
+_:genid13 <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/alex/ontologies/2024/3/s> .
+_:genid13 <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Survey> .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#ClassAtom> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
+_:genid1 <http://www.w3.org/2003/11/swrl#head> _:genid14 .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid15 .
+_:genid15 <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/alex/ontologies/2024/3/s> .
+_:genid15 <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Satisfied> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#ClassAtom> .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
+_:genid16 <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+_:genid16 <http://www.w3.org/2000/01/rdf-schema#comment> "A survey got a dissatisfied rating" .
+_:genid16 <http://www.w3.org/2000/01/rdf-schema#label> "Dissatisfied" .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#Imp> .
+_:genid16 <http://www.w3.org/2003/11/swrl#body> _:genid23 .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid21 .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid17 .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid18 .
+_:genid18 <http://www.w3.org/2003/11/swrl#arguments> _:genid20 .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid19 .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "5"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.semanticweb.org/alex/ontologies/2024/3/r> .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid18 <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#lessThan> .
+<http://www.w3.org/2003/11/swrlb#lessThan> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#Builtin> .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#BuiltinAtom> .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid22 .
+_:genid22 <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/alex/ontologies/2024/3/r> .
+_:genid22 <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/alex/ontologies/2024/3/s> .
+_:genid22 <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/rating> .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid24 .
+_:genid24 <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/alex/ontologies/2024/3/s> .
+_:genid24 <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Survey> .
+_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#ClassAtom> .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
+_:genid16 <http://www.w3.org/2003/11/swrl#head> _:genid25 .
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid26 .
+_:genid26 <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/alex/ontologies/2024/3/s> .
+_:genid26 <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Dissatisfied> .
+_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#ClassAtom> .
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
+_:genid27 <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+_:genid27 <http://www.w3.org/2000/01/rdf-schema#comment> "A survey got a very satisfied rating" .
+_:genid27 <http://www.w3.org/2000/01/rdf-schema#label> "VerySatisfied" .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#Imp> .
+_:genid27 <http://www.w3.org/2003/11/swrl#body> _:genid34 .
+_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid32 .
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid28 .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid29 .
+_:genid29 <http://www.w3.org/2003/11/swrl#arguments> _:genid31 .
+_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid30 .
+_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "8"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.semanticweb.org/alex/ontologies/2024/3/r> .
+_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid29 <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#greaterThan> .
+<http://www.w3.org/2003/11/swrlb#greaterThan> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#Builtin> .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#BuiltinAtom> .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid33 .
+_:genid33 <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/alex/ontologies/2024/3/r> .
+_:genid33 <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/alex/ontologies/2024/3/s> .
+_:genid33 <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/rating> .
+_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> .
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
+_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid35 .
+_:genid35 <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/alex/ontologies/2024/3/s> .
+_:genid35 <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Survey> .
+_:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#ClassAtom> .
+_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
+_:genid27 <http://www.w3.org/2003/11/swrl#head> _:genid36 .
+_:genid36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid37 .
+_:genid37 <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/alex/ontologies/2024/3/s> .
+_:genid37 <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.semanticweb.org/alex/ontologies/2024/3/ASS/Very_Satisfied> .
+_:genid37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#ClassAtom> .
+_:genid36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
